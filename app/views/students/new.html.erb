@@ -1,0 +1,23 @@
+<h1>New Student Form</h1>
+
+<div>
+    <%= form_for @student do |f| %>
+        <%= f.label :name %>
+            <%= f.text_field :name %>
+                <% @student.errors.full_messages_for(:name).each do |message| %>
+                    <div>
+                        <%= message %>
+                    </div>
+                    <% end %>
+</div>
+<div>
+    <%= f.label :age %>
+        <%= f.text_field :age %>
+            <% @student.errors.full_messages_for(:age).each do |message| %>
+                <div>
+                    <%= message %>
+                </div>
+                <% end %>
+                    <%= f.submit %>
+</div>
+<% end %>
