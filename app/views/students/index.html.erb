@@ -1,32 +1,33 @@
 <h1>Students Index</h1>
 
 <table>
-    <thead>
-        <tr>
-            <th>Name:</th>
-            <th>Age:</th>
+  <thead>
+    <tr>
+    <th>Name:</th>
+    <th>Age:</th>
 
-        </tr>
-    </thead>
+    </tr>
+  </thead>
     <tbody>
-        <% @student.each do |student| %>
-            <tr>
-                <td>
-                    <%= student.name %>
-                </td>
-                <td>
-                    <%= student.age %>
-                </td>
-                <td>
-                    <%= link_to "Destroy" , student_path(student), method: :delete %>
-                </td>
-                <td>
-                    <%= link_to "Edit" , edit_student_path(student) %>
-                </td>
-            </tr>
-            <% end %>
+      <% @student.each do |student| %>
+    <tr>
+      <td>
+      <%= link_to "#{student.name}" , student_path(student) %>
+      </td>
+
+      <td>
+        <%= student.age %>
+      </td>
+      <td>
+        <%= link_to "Destroy" , student_path(student), method: :delete %>
+      </td>
+      <td>
+        <%= link_to "Edit" , edit_student_path(student) %>
+      </td>
+      </tr>
+       <% end %>
     </tbody>
 </table>
 <div>
-    <%= button_to "Add New Student" , new_student_path, method: :get %>
+      <%= button_to "Add New Student" , new_student_path, method: :get %>
 </div>

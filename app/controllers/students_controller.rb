@@ -1,4 +1,6 @@
 class StudentsController < ApplicationController
+    before_action :set_student, only:[:show, :edit, :destroy, :update]
+    
     def index
       @student = Student.all    
     end
@@ -8,27 +10,22 @@ class StudentsController < ApplicationController
     end
 
     def create 
-      @student = Student.create(params.require(:student).permit(:name, :age))
+      @student = Student.create(student_params)
       if @student.save 
         redirect_to @student
       else  
-       render :new, status: :unprocessable_entity
-          
+       render :new, status: :unprocessable_entity   
       end
     end
 
     def show 
-      @student = Student.find(params[:id])  
     end
 
     def edit 
-      @student = Student.find(params[:id])  
     end
 
     def update
-      @student = Student.find(params[:id])  
-
-      if @student.update(params.require(:student).permit(:name, :age))
+      if @student.update(student_params)
         flash[:notice] = "Update Successful"
         redirect_to @student
       else
@@ -37,10 +34,19 @@ class StudentsController < ApplicationController
     end
 
     def destroy 
-       @student = Student.find(params[:id])
+       
        @student.destroy 
 
        redirect_to students_path
     end
 
+    private 
+    def set_student
+      @student = Student.find(params[:id])   
+    end
+
+    def student_params
+        (params.require(:student).permit(:name, :age))
+    end
+  
 end

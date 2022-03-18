@@ -1,7 +1,7 @@
-<h1>
-    <%= @student.name %>
-</h1>
+<h1><%= @student.name %></h1>
 
-<h2>
-    <%= @student.age %>
-</h2>
+<h2><%= @student.age %></h2>
+
+<%= link_to "Add New Student" , new_student_path, method: :get %> | 
+<%= link_to"Index" , students_path %> | 
+<%=link_to "Edit" , edit_student_path(@student) %>
