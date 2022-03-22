@@ -5,6 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-(1..10).each do |i|
-    student.create(name: "name #{i}"  , age: "age #{i}")
+
+require 'faker'
+
+require 'faker'
+
+
+(1..100).each do |i|
+    student.create(name: Faker::Name.name, age: "age #{i}", degree: Faker::Educator.degree)  
+        
+        
+        
+        #name: "name #{i}"  , age: "age #{i}")
 end
+
