@@ -1,2 +1,32 @@
 @import "bootstrap/dist/css/bootstrap";
 
+#topper{
+    text-align: center;
+    font-size: 50px;
+    font-family: Georgia, serif;
+    margin: auto;
+}
+
+#nav{
+    border-style: solid;
+    border-color: blue;
+    font-size: large;
+}
+
+footer{
+    font-size: small;
+    text-align: center;
+}
+
+blockquote, #quote{
+    font-family: Georgia, serif;
+    text-align: center;
+}
+.btn-group-lg{
+    text-align: center;
+    font-size: larger;
+}
+#outline{
+    background-color: black;
+    text-align: center;
+}
