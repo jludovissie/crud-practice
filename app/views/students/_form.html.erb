@@ -1,20 +1,56 @@
-  <% if @student.errors.any? %>
-  <% @student.errors.full_messages.each do |message| %>
-<div>
-  <%= message %>
-</div>
-  <% end %>
-  <% end %>
-<div>
-  <%= form_with(model: @student) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :age %>
-  <%= f.text_field :age %>
-  <%= f.submit %>
-  <% end %>
- </div>
+<% if @student.errors.any? %>
+    <% @student.errors.full_messages.each do |message| %>
+        <div>
+            <%= message %>
+        </div>
+        <% end %>
+            <% end %>
+                <div>
+                    <%= link_to "Index" , students_path %>
+                </div>
+                <!-- <%= form_with(model: @student) do |form| %>
+    <%= form.label :name, class: "col-sm-2 col-form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
+    <%= form.label :age, class: "col-sm-2 col-form-label"%>
+    <%= form.text_field :age, class: "form-control"%>
+    <%= form.label :degree, class: "col-sm-2 col-form-label"%>
+    <%= form.text_field :degree, class: "form-control"%>
+    <%= form.submit %>
+<% end %> -->
+                <div class="form-body">
+                    <img src=https://bcassetcdn.com/public/blog/wp-content/uploads/2019/11/02142653/Rabbit.jpg alt=""
+                    width="100" height="88" class="justify-content-center">
+                    <div class="row">
+                        <div class="form-holder">
+                            <div class="form-content">
+                                <div class="form-items">
+                                    <h3>Form </h3>
+                                    <p>Update your information or Apply Today!</p>
+                                    <!-- <form> -->
+                                    <%= form_with(model: @student) do |form| %>
+                                        <div class="col-md-12">
+                                            <%= form.label :name, class: "col-sm-2 col-form-label" %>
+                                                <%= form.text_field :name, class: "form-control" %>
+                                        </div>
 
-<div>
-<%= link_to "Index" , students_path %>
-</div>
+                                        <div class="col-md-12">
+                                            <%= form.label :age, class: "col-sm-2 col-form-label" %>
+                                                <%= form.text_field :age, class: "form-control" %>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <%= form.label :degree, class: "col-sm-2 col-form-label" %>
+                                                <%= form.text_field :degree, class: "form-control" %>
+                                        </div>
+
+                                       
+                                            <%= form.submit "Submit", class: "btn btn-primary" %>
+                                      
+                                        <% end %>
+                                        <div>
+                                        <%= link_to "Student Roster" , students_path, class: "btn btn-primary" %>   <!-- </form> -->
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>

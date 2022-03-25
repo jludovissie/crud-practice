@@ -1,33 +1,53 @@
-<h1>Students Index</h1>
+<div class="container-fluid bg-dark">
+  <a id ="topper" class="navbar-brand" href="#">
+    <img src= https://bcassetcdn.com/public/blog/wp-content/uploads/2019/11/02142653/Rabbit.jpg alt="" width="100" height="88" class="d-inline-block align-text-top">
+    Unversity Roster
+  </a>
+  <div id="index-button">
+    <%= link_to "Add New Student" , new_student_path, method: :get, class:"btn btn-primary" %>
+  </div>
+  </div>
 
-<table>
+<table class="table table-dark table-hover">
   <thead>
     <tr>
     <th>Name:</th>
     <th>Age:</th>
+    <th>Degree:</th>
+    <th>Update </th>
+    <th>Delete</th>
 
     </tr>
   </thead>
-    <tbody>
-      <% @student.each do |student| %>
+  <tbody>
+    <% @student.each do |student| %>
     <tr>
-      <td>
+    <td>
       <%= link_to "#{student.name}" , student_path(student) %>
-      </td>
+    </td>
 
-      <td>
-        <%= student.age %>
-      </td>
-      <td>
-        <%= link_to "Destroy" , student_path(student), method: :delete %>
-      </td>
-      <td>
-        <%= link_to "Edit" , edit_student_path(student) %>
-      </td>
-      </tr>
-       <% end %>
+    <td>
+      <%= student.age %>
+    </td>
+    <td>
+      <%= student.degree %>
+    </td>
+    <td>
+      <%= link_to "Edit", edit_student_path(student),  class:"btn btn-dark"%>
+    </td>
+    <td>
+      <%= link_to "Destroy" , student_path(student), method: :delete, class:"btn btn-dark" %>
+    </td>
+    </tr>
+      <% end %>
     </tbody>
 </table>
-<div>
-      <%= button_to "Add New Student" , new_student_path, method: :get %>
-</div>
+
+
+
+
+
+
+
+
+

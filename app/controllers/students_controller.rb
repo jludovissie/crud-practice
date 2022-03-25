@@ -1,6 +1,5 @@
 class StudentsController < ApplicationController
     before_action :set_student, only:[:show, :edit, :destroy, :update]
-    
     def index
       @student = Student.all    
     end
@@ -33,8 +32,7 @@ class StudentsController < ApplicationController
       end
     end
 
-    def destroy 
-       
+    def destroy  
        @student.destroy 
 
        redirect_to students_path
@@ -46,7 +44,7 @@ class StudentsController < ApplicationController
     end
 
     def student_params
-        (params.require(:student).permit(:name, :age))
+        (params.require(:student).permit(:name, :age, :degree))
     end
   
 end
