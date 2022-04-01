@@ -1,0 +1,31 @@
+<div class="form-body">
+    <img src=https://bcassetcdn.com/public/blog/wp-content/uploads/2019/11/02142653/Rabbit.jpg alt=""
+    width="100" height="88" class="justify-content-center">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Current Student Login</h3>
+                    <p>Paducah University</p>
+                    <!-- <form> -->
+                        <%= form_with(scope: :sessions, url: login_path) do |form| %>
+                        <div class="col-md-12">
+                            <%= form.label :email, class: "col-sm-2 col-form-label" %>
+                            <%= form.text_field :email, class: "form-control" %>
+                        </div>
+
+                        <div class="col-md-12">
+                            <%= form.label :password, class: "col-sm-2 col-form-label" %>
+                            <%= form.text_field :password, class: "form-control" %>
+                        </div>
+                            <%= form.submit "Login", class: "btn btn-primary" %>
+                      
+                        <% end %>
+                        <div>
+                          <%= link_to "Student Roster" , students_path, class: "btn btn-primary" %>   <!-- </form> -->
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

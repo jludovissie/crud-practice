@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_29_011451) do
+ActiveRecord::Schema.define(version: 2022_04_01_005832) do
 
   create_table "courses", force: :cascade do |t|
     t.string "name"
@@ -41,6 +41,9 @@ ActiveRecord::Schema.define(version: 2022_03_29_011451) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "degree"
     t.string "course_id"
+    t.text "email"
+    t.text "username"
+    t.string "password_digest"
   end
 
 end
